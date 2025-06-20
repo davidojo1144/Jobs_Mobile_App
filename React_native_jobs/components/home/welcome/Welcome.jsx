@@ -32,6 +32,14 @@ const Welcome = () => {
           />
         </View>
       </View>
+
+      <TouchableOpacity style={styles.searchBtn}>
+        <Image
+        source={icons.search}
+        resizeMode='contain'
+        style={styles.searchBtnImage}
+        />
+      </TouchableOpacity>
     </View>
   )
 }
