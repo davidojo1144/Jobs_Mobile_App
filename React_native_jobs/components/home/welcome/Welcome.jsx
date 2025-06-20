@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { 
   View, 
   Text,
@@ -16,6 +16,7 @@ const jobTypes = ["Full-time", "Part-time", "Contractor"]
 
 const Welcome = () => {
   const router = useRouter()
+  const [activeJobType, SetActiveJobType] = useState("Full-time")
 
   return (
     <View>
@@ -49,8 +50,12 @@ const Welcome = () => {
         renderItem={({item})=> (
           <TouchableOpacity
           style={styles.tab(activeJobType, item)}
+          onPress={()=> {
+            SetActiveJobType(item)
+            router.push(`/search/${item}`)
+          }}
           >
-            <Text>{item}</Text>
+            <Text style={styles.tabText(activeJobType, item)}>{item}</Text>
           </TouchableOpacity>
           )}
         />
