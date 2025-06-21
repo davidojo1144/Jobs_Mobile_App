@@ -7,7 +7,7 @@ import {
     ActivityIndicator,
     RefreshControl
 } from 'react-native'
-import { Stack, useRouter, useSearchParams } from 'expo-router'
+import { Stack, useRouter, useGlobalSearchParams } from 'expo-router'
 
 
 import {Company, JobAbout, JobFooter, JobTabs, ScreenHeaderBtn, Specifics } from "../../components"
@@ -17,7 +17,7 @@ import useFetch from '../../hook/useFetch'
 
 const JobDetails = () => {
 
-    const params = useSearchParams()
+    const params = useGlobalSearchParams()
     const router = useRouter()
 
     const { data, isLoading, error, refresh } = useFetch("job-details", {
