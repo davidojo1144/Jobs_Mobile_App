@@ -13,27 +13,27 @@ const NearbyJobCard = ({job, handleNavigate}) => {
     onPress={()=> handleNavigate}
     >
 
-      <TouchableOpacity style={styles.logoContainer(selectedJob, item)}>
+      <TouchableOpacity style={styles.logoContainer}>
         <Image
-        source={{uri: cheeckImageURL(item.employer_logo)
-          ? item.employer_logo
+        source={{uri: cheeckImageURL(job.employer_logo)
+          ? job.employer_logo
           : 'https://t4.ftcdn.net/jpg/05/05/61/73/360_F_505617309_NNICW7diNmGXJfMicpY9eXHKV4sgzO5H.jpg'
         }}
         resizeMode='contain'
-        style={styles.logoImage}        />
+        style={styles.logImage}        />
       </TouchableOpacity>
-      <Text style={styles.companyName} numberOfLines={1}>{item.employer_name}</Text>
+      <Text style={styles.companyName} numberOfLines={1}>{job.employer_name}</Text>
 
       <View style={styles.infoContainer}>
-        <Text style={styles.jobName(selectedJob, item)}
+        <Text style={styles.jobName}
         numberOfLines={1}
         >
-          {item.job_title}
+          {job.job_title}
         </Text>
-        <Text styles={styles.location}>{item.job_country}</Text>
+        <Text styles={styles.location}>{job.job_country}</Text>
       </View>
     </TouchableOpacity>
   )
 }
 
-export default NearbyJobCardJobCard
+export default NearbyJobCard
