@@ -8,8 +8,8 @@ const About = ({info}) => {
     <View style={styles.container}>
       <Text style={styles.headText}>About this Job: </Text>
 
-      <View>
-        <Text>{info}</Text>
+      <View style={styles.contentBox}>
+        <Text style={styles.contextText}>{info}</Text>
       </View>
     </View>
   )
