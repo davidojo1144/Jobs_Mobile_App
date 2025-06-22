@@ -35,10 +35,12 @@ const JobDetails = () => {
         if (activeTab  === "Qualifications") {
             return <Specifics
                     title="Qualifications"
-                    points={data[0].job_highlights?.qualifications ?? ["N/A"]}
-                    />
+                    points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
+            />
         } else if (activeTab  === "About"){
-
+            return <JobAbout
+                    info={data[0].job_description ?? "No Data Provided"}
+            />
         }
         // switch (activeTab) {
         //     case "Qualifications":
