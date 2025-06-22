@@ -43,21 +43,11 @@ const JobDetails = () => {
             />
         } else if (activeTab  === "Responsibilities") {
             return <Specifics
-                    title="Qualifications"
-                    points={data[0].job_highlights?.Qualifications ?? ["N/A"]}
+                    title="Responsibilities"
+                    points={data[0].job_highlights?.Responsibilities ?? ["N/A"]}
             />
         }
-        // switch (activeTab) {
-        //     case "Qualifications":
-        //         return <Specifics
-        //         title="Qualifications"
-        //         points={data[0].job_highlights?.qualifications ?? ["N/A"]}
-        //         />
-        //     case "About":
-        //     case "Responsibilities":
-        //     default:
-        //         break;
-        //}
+
     }
 
 
@@ -114,6 +104,7 @@ const JobDetails = () => {
                 )
             }
         </ScrollView>
+        <JobFooter url={data[0]?.job_google_link ?? "https://careers.google.com/jobs/results"} />
        </>
     </SafeAreaView>
   )
