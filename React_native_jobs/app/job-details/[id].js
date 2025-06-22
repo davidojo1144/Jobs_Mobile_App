@@ -32,14 +32,25 @@ const JobDetails = () => {
     const onRefresh = ""
 
     const displayTabContent = () => {
-        switch (activeTab) {
-            case "Qualifications":
-                
-                break;
-        
-            default:
-                break;
+        if (activeTab  === "Qualifications") {
+            return <Specifics
+                    title="Qualifications"
+                    points={data[0].job_highlights?.qualifications ?? ["N/A"]}
+                    />
+        } else if (activeTab  === "About"){
+
         }
+        // switch (activeTab) {
+        //     case "Qualifications":
+        //         return <Specifics
+        //         title="Qualifications"
+        //         points={data[0].job_highlights?.qualifications ?? ["N/A"]}
+        //         />
+        //     case "About":
+        //     case "Responsibilities":
+        //     default:
+        //         break;
+        //}
     }
 
 
