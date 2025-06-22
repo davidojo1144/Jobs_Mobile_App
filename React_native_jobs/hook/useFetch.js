@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import axios from "axios"
-//import {RAPID_API_KEY} from "@env"
 import Constants from 'expo-constants';
 
 const rapidApiKey = Constants.expoConfig.extra.RAPID_API_KEY
@@ -19,7 +18,7 @@ const useFetch = (endpoint, query) => {
         method: 'GET',
         url: `https://jsearch.p.rapidapi.com/${endpoint}`,
         headers: {
-            'x-rapidapi-key': 'KJwZZIJSFimshuivMSVGaiYzkRomp15f2vKjsnK4bKzuUzVLzA',
+            'x-rapidapi-key': 'c215002a4cmshc2e02b81a0e69c3p1cebe4jsnd321d9cbea1e',
             'x-rapidapi-host': 'jsearch.p.rapidapi.com'
         },
         params: {...query},
@@ -36,7 +35,7 @@ const useFetch = (endpoint, query) => {
             setIsLoading(false)
         } catch (error) {
             setError(error)
-            alert("There was an error")
+            //alert("There was an error")
         } finally {
             setIsLoading(false)
         }

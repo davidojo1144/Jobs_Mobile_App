@@ -22,14 +22,18 @@ const JobDetails = () => {
     const params = useGlobalSearchParams()
     const router = useRouter()
 
-    const { data, isLoading, error, refresh } = useFetch("job-details", {
+    const { data, isLoading, error, refetch } = useFetch("job-details", {
         job_id: params.id
     })
 
     const [refreshing, SetRefreshing] = useState(false)
     const [activeTab, setActiveTab] = useState(tabs[0])
 
-    const onRefresh = 
+    const onRefresh = useCallback(() => {
+        SetRefreshing(true)
+        refetch()
+        SetRefreshing(false)
+    }, [])
 
     const displayTabContent = () => {
         if (activeTab  === "Qualifications") {
