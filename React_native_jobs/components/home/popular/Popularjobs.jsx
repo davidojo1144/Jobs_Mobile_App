@@ -25,6 +25,13 @@ const Popularjobs = () => {
   })
 
 
+  const [selectedJob, setSelectedJob] = useState()
+
+  const handleCardPress = (item) => {
+
+  }
+
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -44,7 +51,11 @@ const Popularjobs = () => {
           <FlatList
           data={[1,2,3,4]}
           renderItem={({item})=> (
-            <PopularJobCard item={item}/>
+            <PopularJobCard 
+            item={item}
+            selectedJob={selectedJob}
+            handleCardPress={handleCardPress}
+            />
           )}
           keyExtractor={item => item?.job_id}
           contentContainerStyle={{columnGap: SIZES.medium}}
