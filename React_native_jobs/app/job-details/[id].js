@@ -29,7 +29,7 @@ const JobDetails = () => {
     const [refreshing, SetRefreshing] = useState(false)
     const [activeTab, setActiveTab] = useState(tabs[0])
 
-    const onRefresh = ""
+    const onRefresh = 
 
     const displayTabContent = () => {
         if (activeTab  === "Qualifications") {
