@@ -27,9 +27,20 @@ const JobDetails = () => {
     })
 
     const [refreshing, SetRefreshing] = useState(false)
-    const [activeTab, setActiveTab] = useState(tab[0])
+    const [activeTab, setActiveTab] = useState(tabs[0])
 
     const onRefresh = ""
+
+    const displayTabContent = () => {
+        switch (activeTab) {
+            case "Qualifications":
+                
+                break;
+        
+            default:
+                break;
+        }
+    }
 
 
   return (
@@ -80,6 +91,7 @@ const JobDetails = () => {
                             activeTab={activeTab}
                             setActiveTab={setActiveTab}
                         />
+                        {displayTabContent()}
                     </View>
                 )
             }
