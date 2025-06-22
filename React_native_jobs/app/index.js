@@ -13,6 +13,7 @@ import {
 
 const Home = ()=> {
     const router = useRouter()
+    const [searchTerm, setSearchTerm] = useState("")
 
     return (
         <SafeAreaView style={{flex: 1, backgroundColor: COLORS.lightWhite}}>
@@ -36,7 +37,9 @@ const Home = ()=> {
                     padding: SIZES.medium
                 }}
                 >
-                    <Welcome/>
+                    <Welcome
+                    
+                    />
                     <Popularjobs/>
                     <Nearbyjobs/>
                 </View>
